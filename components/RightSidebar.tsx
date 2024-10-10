@@ -11,15 +11,15 @@ function RightSidebar({ user, transactions, banks }: RightSidebarProps) {
             <div className="profile-banner"/>
             <div className="profile">
                 <div className="profile-img">
-                    {/* <span className="text-5xl font-bold text-blue-500">{user.$id}</span> */}
+                    {/* <span className="text-5xl font-bold text-blue-500">{user.name || ""}</span> */}
                 </div>
 
                 <div className="profile-details">
                     <h1 className="profile-name">
-                        {/* {user.$id} */}
+                        {/* {user.name || ""}  */}
                     </h1>
                     <p className="profile-email">
-                        {/* {user.$id} */}
+                        {/* {user.email || ""}  */}
                     </p>
                 </div>
             </div>
@@ -47,7 +47,7 @@ function RightSidebar({ user, transactions, banks }: RightSidebarProps) {
                             key={banks[0].$id}
                             account={banks[0]}
                             // userName={`${user.firstName} ${user.lastName}`}
-                            userName={`$asd`}
+                            userName={"asdasd"}
                             showBalance={false}
                         />
                     </div>
@@ -57,7 +57,7 @@ function RightSidebar({ user, transactions, banks }: RightSidebarProps) {
                                 key={banks[1].$id}
                                 account={banks[1]}
                                 // userName={`${user.firstName} ${user.lastName}`}
-                                userName={`$asd`}
+                                userName={"asdasd"}
                                 showBalance={false}
                             />
                         </div>
