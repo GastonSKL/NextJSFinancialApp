@@ -6,7 +6,6 @@ async function SignUp() {
 
   const userLogged = await getLoggedInUser();
 
-  console.log(userLogged);
   
   
 

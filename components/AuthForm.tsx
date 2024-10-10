@@ -20,7 +20,7 @@ import CustomInput from "./CustomInput";
 import { authFormSchema } from "@/lib/utils";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { getLoggedInUser, signIn, signUp } from "@/lib/actions/user.actions";
+import { getLoggedInUser, logoutAccount, signIn, signUp } from "@/lib/actions/user.actions";
 
 function AuthForm({ type }: { type: string }) {
   const router = useRouter();
@@ -41,18 +41,19 @@ function AuthForm({ type }: { type: string }) {
 
     try {
       if (type === "sign-up") {
+        
         const newUser = await signUp(data);
 
         setUser(newUser);
       }
 
-      if (type === "sign-in") {
+      if(type === 'sign-in') {
         const response = await signIn({
           email: data.email,
           password: data.password,
-        });
+        })
 
-        if (response) router.push("/");
+        if(response) router.push('/')
       }
     } catch (error) {
       console.log(error);
@@ -99,7 +100,7 @@ function AuthForm({ type }: { type: string }) {
                     />
                     <CustomInput
                       control={form.control}
-                      name="lasttName"
+                      name="lastName"
                       label="Last Name"
                       placeholder="Enter your last name"
                       type="text"
@@ -142,7 +143,7 @@ function AuthForm({ type }: { type: string }) {
                   <div className="flex gap-4 justify-between">
                     <CustomInput
                       control={form.control}
-                      name="dateofbirth"
+                      name="dateOfBirth"
                       label="Date of Birth"
                       placeholder="Enter your day of birth"
                       type="text"
